@@ -1,0 +1,33 @@
+﻿@model Dictionary<string, HabrFeedDocument>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @foreach(var pair in Model)
+    {
+        foreach (var item in pair.Value.Channel.Items)
+        {
+            <div class="js-publication">
+                <a href="@item.Link"><h3>@item.Title</h3></a>
+                <div class="d-flex flex-row-reverse">
+                    <button class="js-toggle-raw">
+                        <span>Raw</span>
+                        <span style="display: none">Html</span>
+                    </button>
+                </div>
+                <div class="js-html-view">
+                    <p>@Html.Raw(item.Description)</p>
+                </div>
+                <div class="js-html-raw-view" style="display: none">
+                    <p>@item.Description</p>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <span>@item.PubDate</span>
+                </div>
+            </div>
+        }
+    }
+</div>

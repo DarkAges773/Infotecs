@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<RssRefreshFrequency>5</RssRefreshFrequency>
+	<RssSources name="habr_interesting">https://habr.com/rss/interesting/</RssSources>
+	<RssSources name="habr_all">https://habr.com/rss/all/</RssSources>
+	<ProxyAddress>micebarn.ru</ProxyAddress>
+	<Logging>
+		<LogLevel>
+			<Default>Information</Default>
+			<Microsoft.AspNetCore>Warning</Microsoft.AspNetCore>
+		</LogLevel>
+	</Logging>
+	<AllowedHosts>*</AllowedHosts>
+</configuration>
